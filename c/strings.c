@@ -9,18 +9,20 @@ char* longest(char* s1, char* s2) {
 
 	char *rez = malloc(tsz * sizeof(char));
 	strcpy(rez, s1);
+	strcat(rez, s2);
 
 	char temp;
 	int sz = strlen(rez);
 	int i, j;
+	printf("Rez: %s\n", rez);
 	printf("Size: %d\n", sz);
 
 	for (i = 0; i < sz-1; i++) {
-		for (j = 0; j < sz; j++) {
-			if (rez[i] > rez[j]) {
-				temp = rez[i];
-				rez[i] = rez[j];
-				rez[j] = temp;
+		for (j = 0; j < sz - i - 1; j++) {
+			if (rez[j] > rez[j+1]) {
+				temp = rez[j];
+				rez[j] = rez[j+1];
+				rez[j+1] = temp;
 			}
 		}
 	}
