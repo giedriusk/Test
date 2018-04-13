@@ -17,6 +17,7 @@ char* longest(char* s1, char* s2) {
 	printf("Rez: %s\n", rez);
 	printf("Size: %d\n", sz);
 
+	// sort
 	for (i = 0; i < sz-1; i++) {
 		for (j = 0; j < sz - i - 1; j++) {
 			if (rez[j] > rez[j+1]) {
@@ -26,6 +27,17 @@ char* longest(char* s1, char* s2) {
 			}
 		}
 	}
+	printf("Sorted: %s\n", rez);
+
+	// remove duplicates
+	char *final = rez;
+	const char ttt = 'e';
+	while(*rez) {
+		rez = strchr(rez, ttt);
+		break;
+		
+	}
+	//*final = '\0';
 
 	return rez;
 }
