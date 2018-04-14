@@ -7,17 +7,15 @@ char* longest(char* s1, char* s2) {
 	int sz_s2 = strlen(s2);
 	int tsz = sz_s1 + sz_s2;
 
+	// create single string
 	char *rez = malloc(tsz * sizeof(char));
 	strcpy(rez, s1);
 	strcat(rez, s2);
-
 	char temp;
 	int sz = strlen(rez);
 	int i, j;
-	printf("Rez: %s\n", rez);
-	printf("Size: %d\n", sz);
 
-	// sort
+	// sort ascending
 	for (i = 0; i < sz-1; i++) {
 		for (j = 0; j < sz - i - 1; j++) {
 			if (rez[j] > rez[j+1]) {
@@ -27,19 +25,18 @@ char* longest(char* s1, char* s2) {
 			}
 		}
 	}
-	printf("Sorted: %s\n", rez);
 
-	// remove duplicates
-	char *final = rez;
-	const char ttt = 'e';
+	// remove duplicated chars
+	char *final = malloc(tsz * sizeof(char));
+	i = 0;
 	while(*rez) {
-		rez = strchr(rez, ttt);
-		break;
-		
+		final[i++] = *rez;
+		rez = strrchr(rez, *rez);
+		rez++;
 	}
-	//*final = '\0';
+	strcat(final, "\0");
 
-	return rez;
+	return final;
 }
 
 int main() {
