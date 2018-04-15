@@ -1,36 +1,18 @@
 #include <stdio.h>
-
-#define ADD "add"
-#define SUBTRACT "subtract"
-#define MULTIPLY "multiply"
-#define DIVIDE "divide"
+#include <string.h>
 
 double arithmetic(double a, double b, char* operator) {
   double rez = 0;
-  printf("Op: %s", operator);
-  switch(*operator) {
-    case ADD : {
-      rez = a + b;
-      break;
-    }
-    case SUBTRACT : {
-      rez = a - b;
-      break;
-    }
-    case MULTIPLY : {
-      rez = a * b;
-      break;
-    }
-    case DIVIDE : {
-      rez = a / b;
-      break;
-    }
-    default : { rez = 0; break; }
-  }
+
+  if (strcmp(operator, "add") == 0) rez = a + b;
+  if (strcmp(operator, "multiply") == 0) rez = a * b;
+  if (strcmp(operator, "subtract") == 0) rez = a - b;
+  if (strcmp(operator, "divide") == 0) rez = a / b;
+
   return rez;
 }
 
 int main() {
-	printf("Rez: %f", arithmetic(1, 2, "add"));
+	printf("Rez: %f\n", arithmetic(1, 2, "add"));
 	return 0;
 }
