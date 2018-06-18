@@ -1,18 +1,22 @@
 #include <stdio.h>
 #include <stddef.h>
-#include <stdlib.h>
-#include <string.h>
 
 size_t countBits(unsigned value) {
 
-  char buffer[20];
-  printf("Binary: %s\n", itoa(value, buffer, 2));
+  unsigned remaining = value;
+  size_t sum = 0;
 
-  return 0;
+  // using division by 2 method
+  while (remaining > 0) {
+    if (remaining % 2 > 0) sum++;
+    remaining = remaining / 2;
+  }
+
+  return sum;
 }
 
 int main() {
-  int result = countBits(5);
-  printf("Result: %s \n", result);
+  int result = countBits(1234);
+  printf("Result: %d \n", result);
   return 0;
 }
