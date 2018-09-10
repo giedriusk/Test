@@ -18,7 +18,7 @@ bool xo(const char* str) {
 
 int main() {
   printf("Starting check for x`es and o`s...\n");
-  if (true == xo("xooxx")) printf("TRUE\n");
+  if (true == xo("Xo")) printf("TRUE\n");
   else printf("FALSE\n");
   return 0;
 }
