@@ -24,8 +24,7 @@ int *buy(int x, int *arr) {
 
 int main() {
     int arr[] = {5,2,3,4,5};
-    int *result;
-    result = malloc(2 * sizeof(int));
+    int *result = malloc(2 * sizeof(int));
     result = buy(5, arr);
     if (NULL == result) printf("Result: NULL\r\n");
     else printf("Result: %d %d\r\n", result[0], result[1]);
