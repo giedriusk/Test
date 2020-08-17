@@ -1,2 +1,0 @@
-/home/giedrius/Practice/DevKata/c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/giedrius/Practice/DevKata/c/cmake-build-debug/CMakeFiles/edit_cache.dir
